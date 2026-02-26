@@ -105,7 +105,7 @@ const gchar *introspection_xml =
     "  </interface>\n"
     "</node>\n";
 
-static const gchar *identity = "chimmusicplay";
+static const gchar *identity = "chimmusicplayer";
 static const gchar *desktop_icon_name = ""; // Without file extension
 static const gchar *desktop_entry = "";     // The name of your .desktop file
 
@@ -1046,7 +1046,7 @@ void init_mpris(void)
                 quit();
         }
 
-        const char *app_name = "org.mpris.MediaPlayer2.chimmusicplay";
+        const char *app_name = "org.mpris.MediaPlayer2.chimmusicplayer";
 
         GError *error = NULL;
         bus_name_id = g_bus_own_name_on_connection(

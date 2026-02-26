@@ -13,7 +13,7 @@ PKG_CONFIG ?= pkg-config
 UNAME_S := $(shell uname -s)
 ARCH := $(shell uname -m)
 
-# Set chimmusicplay version
+# Set chimmusicplayer version
 KEW_VERSION ?= $(shell git describe --tags --dirty --always)
 
   # Check if we're in Termux environment
@@ -198,22 +198,22 @@ SRCS = src/common/appstate.c src/ui/common_ui.c src/common/common.c \
        src/ui/youtube_ui.c \
        src/ui/visuals.c src/ui/chroma.c src/ui/queue_ui.c src/ui/settings.c  src/ui/cli.c \
        src/data/theme.c src/data/directorytree.c src/data/lyrics.c src/data/img_func.c src/data/song_loader.c  \
-       src/data/playlist.c  src/chimmusicplay.c
+       src/data/playlist.c  src/chimmusicplayer.c
 
 # TagLib wrapper
 WRAPPER_SRC = src/data/tagLibWrapper.cpp
 WRAPPER_OBJ = $(OBJDIR)/tagLibWrapper.o
 
-MAN_PAGE = chimmusicplay.1
+MAN_PAGE = chimmusicplayer.1
 MAN_DIR ?= $(PREFIX)/share/man
 DATADIR ?= $(PREFIX)/share
 LOCALEDIR ?= $(DATADIR)/locale
-THEMEDIR = $(DATADIR)/chimmusicplay/themes
+THEMEDIR = $(DATADIR)/chimmusicplayer/themes
 THEMESRCDIR := $(CURDIR)/themes
 
 DEFINES += -DLOCALEDIR=\"$(LOCALEDIR)\"
 
-all: chimmusicplay
+all: chimmusicplayer
 
 # Generate object lists
 OBJS_C = $(SRCS:src/%.c=$(OBJDIR)/%.o)
@@ -260,8 +260,8 @@ $(OBJDIR)/nestegg/%.o: include/nestegg/%.c Makefile | $(OBJDIR)
 	$(CC) $(CFLAGS) $(DEFINES) -c -o $@ $<
 
 # Link all objects safely together using C++ linker
-chimmusicplay: $(OBJS) $(WRAPPER_OBJ) Makefile
-	$(CXX) -o chimmusicplay $(OBJS) $(WRAPPER_OBJ) $(LIBS) $(LDFLAGS)
+chimmusicplayer: $(OBJS) $(WRAPPER_OBJ) Makefile
+	$(CXX) -o chimmusicplayer $(OBJS) $(WRAPPER_OBJ) $(LIBS) $(LDFLAGS)
 
 .PHONY: install
 install: all
@@ -273,16 +273,16 @@ install: all
 	mkdir -p $(DESTDIR)$(LOCALEDIR)/zh_CN/LC_MESSAGES
 
 	# Install binary and man page
-	install -m 0755 chimmusicplay $(DESTDIR)$(PREFIX)/bin/chimmusicplay
-	install -m 0644 docs/chimmusicplay.1 $(DESTDIR)$(MAN_DIR)/man1/chimmusicplay.1
+	install -m 0755 chimmusicplayer $(DESTDIR)$(PREFIX)/bin/chimmusicplayer
+	install -m 0644 docs/chimmusicplayer.1 $(DESTDIR)$(MAN_DIR)/man1/chimmusicplayer.1
 
 	# Install Chinese translation
-	install -m 0644 locale/zh_CN/LC_MESSAGES/chimmusicplay.mo \
-	$(DESTDIR)$(LOCALEDIR)/zh_CN/LC_MESSAGES/chimmusicplay.mo
+	install -m 0644 locale/zh_CN/LC_MESSAGES/chimmusicplayer.mo \
+	$(DESTDIR)$(LOCALEDIR)/zh_CN/LC_MESSAGES/chimmusicplayer.mo
 
 	# Install Japanese translation
-	install -m 0644 locale/ja/LC_MESSAGES/chimmusicplay.mo \
-	$(DESTDIR)$(LOCALEDIR)/ja/LC_MESSAGES/chimmusicplay.mo
+	install -m 0644 locale/ja/LC_MESSAGES/chimmusicplayer.mo \
+	$(DESTDIR)$(LOCALEDIR)/ja/LC_MESSAGES/chimmusicplayer.mo
 
 	@if [ -d $(THEMESRCDIR) ]; then \
 	for theme in $(THEMESRCDIR)/*.theme; do \
@@ -299,14 +299,14 @@ install: all
 
 .PHONY: uninstall
 uninstall:
-	rm -f $(DESTDIR)$(PREFIX)/bin/chimmusicplay
-	rm -f $(DESTDIR)$(MAN_DIR)/man1/chimmusicplay.1
+	rm -f $(DESTDIR)$(PREFIX)/bin/chimmusicplayer
+	rm -f $(DESTDIR)$(MAN_DIR)/man1/chimmusicplayer.1
 	rm -rf $(DESTDIR)$(THEMEDIR)
-	rm -f $(DESTDIR)$(LOCALEDIR)/ja/LC_MESSAGES/chimmusicplay.mo
-	rm -f $(DESTDIR)$(LOCALEDIR)/zh_CN/LC_MESSAGES/chimmusicplay.mo
+	rm -f $(DESTDIR)$(LOCALEDIR)/ja/LC_MESSAGES/chimmusicplayer.mo
+	rm -f $(DESTDIR)$(LOCALEDIR)/zh_CN/LC_MESSAGES/chimmusicplayer.mo
 
 .PHONY: clean
 clean:
-	rm -rf $(OBJDIR) chimmusicplay
+	rm -rf $(OBJDIR) chimmusicplayer
 i18n:
 	$(MAKE) -f Makefile.i18n i18n

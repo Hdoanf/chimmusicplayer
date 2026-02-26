@@ -1,6 +1,6 @@
 /**
  * @file discord_rpc.c
- * @brief Integration that shows chimmusicplay status in discord.
+ * @brief Integration that shows chimmusicplayer status in discord.
  *
  * Implements a discord RPC integration,
 
@@ -162,7 +162,7 @@ void discord_rpc_clear(void)
 
         char payload[256];
         snprintf(payload, sizeof(payload),
-                 "{\"cmd\":\"SET_ACTIVITY\",\"args\":{\"pid\":%d},\"nonce\":\"chimmusicplay_clear\"}",
+                 "{\"cmd\":\"SET_ACTIVITY\",\"args\":{\"pid\":%d},\"nonce\":\"chimmusicplayer_clear\"}",
                  getpid());
 
         send_frame(DISCORD_OP_FRAME, payload);
@@ -225,8 +225,8 @@ void notify_discord_switch(SongData *song)
                  "\"start\":%lld"
                  "},"
                  "\"assets\":{"
-                 "\"large_image\":\"chimmusicplay_logo\","
-                 "\"large_text\":\"chimmusicplay music player\""
+                 "\"large_image\":\"chimmusicplayer_logo\","
+                 "\"large_text\":\"chimmusicplayer music player\""
                  "}"
                  "}"
                  "},"

@@ -99,9 +99,9 @@ void set_music_path(void)
         clear_screen();
         set_term_size();
 
-        ui->color.r = ui->chimmusicplayColorRGB.r;
-        ui->color.g = ui->chimmusicplayColorRGB.g;
-        ui->color.b = ui->chimmusicplayColorRGB.b;
+        ui->color.r = ui->chimmusicplayerColorRGB.r;
+        ui->color.g = ui->chimmusicplayerColorRGB.g;
+        ui->color.b = ui->chimmusicplayerColorRGB.b;
 
         ui->colorMode = COLOR_MODE_ALBUM;
 
@@ -140,7 +140,7 @@ void set_music_path(void)
 
                         print_blank_spaces(indent);
                         printf(_("Music Library: "));
-                        apply_color(COLOR_MODE_ALBUM, ui->theme.text, ui->chimmusicplayColorRGB);
+                        apply_color(COLOR_MODE_ALBUM, ui->theme.text, ui->chimmusicplayerColorRGB);
                         printf("%s\n\n", path);
                         apply_color(COLOR_MODE_ALBUM, ui->theme.text, ui->defaultColorRGB);
                         print_blank_spaces(indent);
@@ -149,7 +149,7 @@ void set_music_path(void)
                         printf(_("Or type a path:\n\n"));
                         print_blank_spaces(indent);
 
-                        apply_color(COLOR_MODE_ALBUM, ui->theme.text, ui->chimmusicplayColorRGB);
+                        apply_color(COLOR_MODE_ALBUM, ui->theme.text, ui->chimmusicplayerColorRGB);
 
                         if (fgets(choice, sizeof(choice), stdin) == NULL) {
                                 print_blank_spaces(indent);
@@ -173,7 +173,7 @@ void set_music_path(void)
         if (found < 1) {
                 printf(_("Type a path:\n\n"));
                 print_blank_spaces(indent);
-                apply_color(COLOR_MODE_ALBUM, ui->theme.text, ui->chimmusicplayColorRGB);
+                apply_color(COLOR_MODE_ALBUM, ui->theme.text, ui->chimmusicplayerColorRGB);
 
                 if (fgets(choice, sizeof(choice), stdin) == NULL) {
                         print_blank_spaces(indent);

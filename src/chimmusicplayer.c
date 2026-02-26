@@ -1,7 +1,7 @@
-/* chimmusicplay - Music For The Shell
+/* chimmusicplayer - Music For The Shell
 Copyright (C) 2022 Ravachol
 
-http://codeberg.org/ravachol/chimmusicplay
+http://codeberg.org/ravachol/chimmusicplayer
 
 $$\
 $$ |
@@ -288,7 +288,7 @@ void load_waiting_music(void)
  * This function stops playback, frees resources, and shuts down the application. It handles
  * cleanup tasks like saving settings, stopping playback, and freeing memory.
  */
-void chimmusicplay_shutdown()
+void chimmusicplayer_shutdown()
 {
         AppState *state = get_app_state();
         PlaybackState *ps = get_playback_state();
@@ -378,7 +378,7 @@ void chimmusicplay_shutdown()
         if (noMusicFound) {
                 printf(_("No Music found.\n"));
                 printf(_("Please make sure the path is set correctly. \n"));
-                printf(_("To set it type: chimmusicplay path \"/path/to/Music\". \n"));
+                printf(_("To set it type: chimmusicplayer path \"/path/to/Music\". \n"));
         } else if (state->uiState.noPlaylist) {
                 printf(_("Music not found.\n"));
         }
@@ -465,7 +465,7 @@ void create_loop(void)
         g_timeout_add(34, mainloop_callback, main_loop);
         g_main_loop_run(main_loop);
         g_main_loop_unref(main_loop);
-        chimmusicplay_shutdown();
+        chimmusicplayer_shutdown();
 }
 
 /**
@@ -536,8 +536,8 @@ void init_locale(void)
         setlocale(LC_ALL, "");
         setlocale(LC_CTYPE, "");
 
-        bindtextdomain("chimmusicplay", LOCALEDIR);
-        textdomain("chimmusicplay");
+        bindtextdomain("chimmusicplayer", LOCALEDIR);
+        textdomain("chimmusicplayer");
 }
 
 /**
@@ -548,7 +548,7 @@ void init_locale(void)
  *
  * @param set_library_enqueued_status Flag indicating whether to set the library's enqueued status.
  */
-void chimmusicplay_init(bool set_library_enqueued_status)
+void chimmusicplayer_init(bool set_library_enqueued_status)
 {
         AppState *state = get_app_state();
 
@@ -615,7 +615,7 @@ void chimmusicplay_init(bool set_library_enqueued_status)
 void init_default_state(void)
 {
         bool set_library_enqueued_status = true;
-        chimmusicplay_init(set_library_enqueued_status);
+        chimmusicplayer_init(set_library_enqueued_status);
 
         AppState *state = get_app_state();
         FileSystemEntry *library = get_library();
@@ -737,9 +737,9 @@ void init_state(void)
         state->uiSettings.defaultColorRGB.r = state->uiSettings.default_color;
         state->uiSettings.defaultColorRGB.g = state->uiSettings.default_color;
         state->uiSettings.defaultColorRGB.b = state->uiSettings.default_color;
-        state->uiSettings.chimmusicplayColorRGB.r = 222;
-        state->uiSettings.chimmusicplayColorRGB.g = 43;
-        state->uiSettings.chimmusicplayColorRGB.b = 77;
+        state->uiSettings.chimmusicplayerColorRGB.r = 222;
+        state->uiSettings.chimmusicplayerColorRGB.g = 43;
+        state->uiSettings.chimmusicplayerColorRGB.b = 77;
         state->uiSettings.chromaPreset = -1;
         state->uiSettings.visualizations_instead_of_cover = false;
 
@@ -880,30 +880,30 @@ int main(int argc, char *argv[])
         if (argc == 1) {
                 init_default_state();
         } else if (argc == 2 && strcmp(argv[1], "all") == 0) {
-                chimmusicplay_init(false);
+                chimmusicplayer_init(false);
                 play_all();
                 run(true);
         } else if (argc == 2 && strcmp(argv[1], "albums") == 0) {
-                chimmusicplay_init(false);
+                chimmusicplayer_init(false);
                 play_all_albums();
                 run(true);
         } else if (argc == 2 && strcmp(argv[1], ".") == 0 && favorites_playlist->count != 0) {
-                chimmusicplay_init(false);
+                chimmusicplayer_init(false);
                 play_favorites_playlist();
                 run(true);
         } else if (run_for_play_command_with_playlist) {
-                chimmusicplay_init(false);
+                chimmusicplayer_init(false);
                 FileSystemEntry *library = get_library();
                 mark_list_as_enqueued(library, playlist);
                 run(true);
         } else if (argc >= 2) {
-                chimmusicplay_init(false);
+                chimmusicplayer_init(false);
                 make_playlist(&playlist, argc, argv, exact_search, settings->path);
 
                 if (playlist->count == 0) {
                         if (argc > 1 && argv[1] && strcmp(argv[1], "theme") != 0)
                                 state->uiState.noPlaylist = true;
-                        chimmusicplay_shutdown();
+                        chimmusicplayer_shutdown();
                 }
 
                 FileSystemEntry *library = get_library();

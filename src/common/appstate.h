@@ -196,7 +196,7 @@ typedef struct
 
         unsigned char default_color; /**< Default ANSI color index. */
         PixelData defaultColorRGB;   /**< Default RGB color value. */
-        PixelData chimmusicplayColorRGB;       /**< Primary application accent RGB color. */
+        PixelData chimmusicplayerColorRGB;       /**< Primary application accent RGB color. */
 
         int chromaPreset;                  /**< Preset index for chroma-based coloring. */
         bool stripTrackNumbers;            /**< Remove track numbers from displayed titles. */

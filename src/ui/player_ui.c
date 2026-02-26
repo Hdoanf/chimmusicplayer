@@ -189,7 +189,7 @@ void set_track_title_as_window_title(void)
 
         if (ui->trackTitleAsWindowTitle) {
                 save_terminal_window_title();
-                set_terminal_window_title("chimmusicplay");
+                set_terminal_window_title("chimmusicplayer");
         }
 }
 
@@ -302,10 +302,10 @@ void calc_preferred_size(UISettings *ui)
 
 void print_help(void)
 {
-        int i = system("man chimmusicplay");
+        int i = system("man chimmusicplayer");
 
         if (i != 0) {
-                printf(_("Run man chimmusicplay for help.\n"));
+                printf(_("Run man chimmusicplayer for help.\n"));
         }
 }
 
@@ -522,7 +522,7 @@ int print_about_for_version(SongData *songdata)
 
         apply_color(ui->colorMode, ui->theme.text, ui->defaultColorRGB);
         print_blank_spaces(indent);
-        printf(_("   chimmusicplay version: "));
+        printf(_("   chimmusicplayer version: "));
         apply_color(ui->colorMode, ui->theme.help, ui->color);
         printf("%s\n", ui->VERSION);
         clear_line();
@@ -1027,7 +1027,7 @@ int print_about(SongData *songdata)
 
         printf("\033[%d;%dH", ++row, col);
         apply_color(ui->colorMode, ui->theme.text, ui->defaultColorRGB);
-        printf(_("   chimmusicplay version: "));
+        printf(_("   chimmusicplayer version: "));
         apply_color(ui->colorMode, ui->theme.help, ui->color);
         printf("%s", ui->VERSION);
         clear_rest_of_line();
@@ -1184,7 +1184,7 @@ int show_key_bindings(SongData *songdata)
                get_binding_string(EVENT_EXPORTPLAYLIST, false));
         CHECK_LIST_LIMIT();
         printf("\033[%d;%dH", ++num_printed_rows, indentation + 1);
-        printf(_(" · Add Song To 'chimmusicplay favorites.m3u': %s (run with 'chimmusicplay .')"),
+        printf(_(" · Add Song To 'chimmusicplayer favorites.m3u': %s (run with 'chimmusicplayer .')"),
                get_binding_string(EVENT_ADDTOFAVORITESPLAYLIST, false));
         num_printed_rows += 2;
         CHECK_LIST_LIMIT();
@@ -1192,7 +1192,7 @@ int show_key_bindings(SongData *songdata)
         apply_color(ui->colorMode, ui->theme.help, ui->defaultColorRGB);
         printf(_(" Project URL: "));
         apply_color(ui->colorMode, ui->theme.link, ui->color);
-        printf("https://codeberg.org/ravachol/chimmusicplay");
+        printf("https://codeberg.org/ravachol/chimmusicplayer");
         CHECK_LIST_LIMIT();
         printf("\033[%d;%dH", ++num_printed_rows, indentation + 1);
         apply_color(ui->colorMode, ui->theme.help, ui->defaultColorRGB);
@@ -2626,7 +2626,7 @@ int print_player(SongData *songdata, double elapsed_seconds)
                         ui->color.b = ui->defaultColorRGB.b;
 
                         if (ui->trackTitleAsWindowTitle)
-                                set_terminal_window_title("chimmusicplay");
+                                set_terminal_window_title("chimmusicplayer");
                 }
 
                 calc_preferred_size(ui);

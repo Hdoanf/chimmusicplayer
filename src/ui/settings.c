@@ -36,8 +36,8 @@
 #include <unistd.h>
 #include <wchar.h>
 
-const char SETTINGS_FILE[] = "chimmusicplayrc";
-const char STATE_FILE[] = "chimmusicplaystaterc";
+const char SETTINGS_FILE[] = "chimmusicplayerrc";
+const char STATE_FILE[] = "chimmusicplayerstaterc";
 
 #define MAX_LINE 1024
 
@@ -1959,8 +1959,8 @@ void set_config(AppSettings *settings, UISettings *ui)
 
         fprintf(file, "\n[colors]\n\n");
 
-        fprintf(file, "# Theme's go in ~/.config/chimmusicplay/themes (on Linux/FreeBSD/Android), \n");
-        fprintf(file, "# and ~/Library/Preferences/chimmusicplay/themes (on macOS), \n");
+        fprintf(file, "# Theme's go in ~/.config/chimmusicplayer/themes (on Linux/FreeBSD/Android), \n");
+        fprintf(file, "# and ~/Library/Preferences/chimmusicplayer/themes (on macOS), \n");
         fprintf(file, "theme=%s\n\n", settings->theme);
 
         fprintf(file, "# Color Mode is:\n");
@@ -1971,8 +1971,8 @@ void set_config(AppSettings *settings, UISettings *ui)
         fprintf(file, "colorMode=%d\n\n", ui->colorMode);
 
         fprintf(file, "# Terminal color theme is default.theme in \n");
-        fprintf(file, "# ~/.config/chimmusicplay/themes (on Linux/FreeBSD/Android), \n");
-        fprintf(file, "# and ~/Library/Preferences/chimmusicplay/themes (on macOS).\n\n");
+        fprintf(file, "# ~/.config/chimmusicplayer/themes (on Linux/FreeBSD/Android), \n");
+        fprintf(file, "# and ~/Library/Preferences/chimmusicplayer/themes (on macOS).\n\n");
 
         fprintf(file, "\n[track cover]\n\n");
         fprintf(file, "coverEnabled=%s\n", settings->coverEnabled);
