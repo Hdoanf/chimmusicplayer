@@ -9,7 +9,6 @@
 -   **Tìm kiếm YouTube (F5):** Tìm kiếm nhạc trực tiếp trên YouTube và hiển thị kết quả ngay trong ứng dụng.
 -   **Tải MP3 tự động:** Tự động tải âm thanh chất lượng cao về thư mục `~/Music`.
 -   **Metadata & Thumbnail:** Tự động nhúng ảnh bìa, tên bài hát, nghệ sĩ từ YouTube vào file MP3.
--   **Giao diện TUI mượt mà:** Logo "chim muoi music player" ASCII độc đáo, căn giữa màn hình.
 -   **Hoạt động Offline:** Sau khi bài hát được tải về, bạn có thể nghe lại bất cứ lúc nào mà không cần mạng.
 
 ---
