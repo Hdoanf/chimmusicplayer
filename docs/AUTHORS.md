@@ -1,0 +1,73 @@
+# AUTHORS
+
+## Maintainers
+* **Ravachol** @ravachol <kew-player@proton.me>
+  * Founder and Main Author
+
+## Advisors
+* @LeahtheSlug (Advisor)
+* Michael Petö @petoem (Technical advisor)
+
+## Contributors (in alphabetical order)
+
+* Alex Hart @hartalex <alex_codeberg@hart.gg>
+* Chromium-3-Oxide <Chromium3Oxide@protonmail.com>
+* Davis @kazemaksOG <davis.kazemaks@gmail.com>
+* @dandelion-75
+* DNEGEL3125 @DNEGEL3125
+* @episvr
+* Hans Petter Jansson @hpjansson <hpj@hpjansson.org>
+* @hiruocha
+* @hypercunx
+* Joey Schaff @jaoheah / @jaoh (codeberg) <jschaff@proton.me>
+* John Lakeman @j-lakeman <le0324tb@anonaddy.me>
+* @noiamnote
+* Martin Kollár @Kolby11
+* Matthias Geiger @werdahias <werdahias@riseup.net>
+* Michael Petö @petoem
+* @Moksh-Parikh
+* @Overionised
+* Ravachol @ravachol <kew-player@proton.me>
+* Rioprastyo17
+* Robertson D. Torress @Welpyes
+* Rowan Shi @rowanxshi
+* Rui Chen @chenrui333 <rui@chenrui.dev>
+* Ruoyu Zhong @ZhongRuoyu <zhongruoyu@outlook.com>
+* Ryouji @soryu-ryouji <helloryouji@outlook.com>
+* Samuel @Samueru-sama
+* Vafone @vafone
+* Xplshn @xplshn
+* Zane Godden @mechatour
+
+## Testers
+
+* Vafone @vafone
+* Nicolas F
+* Ravachol @ravachol <kew-player@proton.me>
+* LeahTheSlug
+
+## Translations
+
+* @hiruocha (Simplified Chinese)
+
+## Special Thanks
+
+We would like to extend our gratitude to the following individuals who have contributed significantly to kew:
+
+* David Reid @mackron <mackron@gmail.com> (author of Miniaudio, used for playing music)
+* Hans Petter Jansson @hpjansson <hpj@hpjansson.org> (author of Chafa, used for displaying images)
+* Chromium-3-Oxide <Chromium3Oxide@protonmail.com>
+* Matthias Geiger @werdahias <werdahias@riseup.net>
+* Vafone @vafone
+* Nicolas F
+* Yuri @yurivict yuri@freebsd.org
+* Joey Schaff @jaoheah <jschaff@proton.me>
+* Agustin Ballesteros @agus-balles <arcpie@aur>
+* LeahTheSlug
+* Saijin Naib @Saijin_Naib
+* Xplshn @xplshn
+* Mateo @malteo <mateo@aur>
+* Hampa @hampa
+* Markmark1 @markmark1
+* VDawg @vdawg-git
+* INIROBO @inirobo
