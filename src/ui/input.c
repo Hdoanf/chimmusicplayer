@@ -337,6 +337,15 @@ void handle_event(struct Event *event)
                         toggle_show_view(YOUTUBE_SEARCH_VIEW);
                 }
                 break;
+        case EVENT_YOUTUBE_SEARCH_EXECUTE:
+                if (state->currentView == YOUTUBE_SEARCH_VIEW) {
+                        char *query = get_search_text();
+                        if (query && strlen(query) > 0) {
+                                youtube_search_start(query);
+                                trigger_refresh();
+                        }
+                }
+                break;
         case EVENT_SHOWLIBRARY:
                 toggle_show_view(LIBRARY_VIEW);
                 break;
